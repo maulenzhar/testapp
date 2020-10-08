@@ -1,29 +1,28 @@
 ## Создание Dockerfile
 nano Dockerfile.test_app1
-
+```
 FROM openjdk:13-jdk-alpine3.10
 ARG JAR_FILE=test2.jar
 COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
-
+```
 ## Собираем образ
-
+```
 docker build -t bagabooengin/app:v1 -f Dockerfile.test_app1  .
 
 docker run -it --name edufood -p 8080:8080 bagabooengin/app:v1
-
-
-## Публикуем в dockerhub
-
-docker commit edufood bagabooengin/app:v1
-docker push bagabooengin/app
-
-## Файл для конфигурирования наших сервисов
-nano docker-compose.yml
- 
 ```
 
+## Публикуем на dockerhub
+```
+docker commit edufood bagabooengin/app:v1
+docker push bagabooengin/app
+```
 
+## Файл для конфигурирования наших сервисов
+
+nano docker-compose.yml
+```
 version: '3'
 services:
   db:
