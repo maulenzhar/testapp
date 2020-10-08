@@ -1,0 +1,21 @@
+.link-yell{
+    text-decoration: none;
+    color: yellow;
+}
+.card-i{
+    width: 27%;
+    margin: auto;
+}
+
+.page-splash {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
